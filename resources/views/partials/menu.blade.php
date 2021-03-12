@@ -35,16 +35,6 @@
                 </a>
             </li>
         @endcan
-        @can('agreement_progress_access')
-            <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.agreement-progresses.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/agreement-progresses") || request()->is("admin/agreement-progresses/*") ? "c-active" : "" }}">
-                    <i class="fa-fw fas fa-spinner c-sidebar-nav-icon">
-
-                    </i>
-                    {{ trans('cruds.agreementProgress.title') }}
-                </a>
-            </li>
-        @endcan
         @can('doctor_match_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route("admin.doctor-matches.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/doctor-matches") || request()->is("admin/doctor-matches/*") ? "c-active" : "" }}">
@@ -62,6 +52,16 @@
 
                     </i>
                     {{ trans('cruds.redactDoctorCv.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('send_redacted_cv_to_provider_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.send-redacted-cv-to-providers.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/send-redacted-cv-to-providers") || request()->is("admin/send-redacted-cv-to-providers/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-share-square c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.sendRedactedCvToProvider.title') }}
                 </a>
             </li>
         @endcan
@@ -115,6 +115,16 @@
                 </a>
             </li>
         @endcan
+        @can('agreement_progress_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.agreement-progresses.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/agreement-progresses") || request()->is("admin/agreement-progresses/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-spinner c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.agreementProgress.title') }}
+                </a>
+            </li>
+        @endcan
         @can('user_management_access')
             <li class="c-sidebar-nav-dropdown {{ request()->is("admin/permissions*") ? "c-show" : "" }} {{ request()->is("admin/roles*") ? "c-show" : "" }} {{ request()->is("admin/users*") ? "c-show" : "" }}">
                 <a class="c-sidebar-nav-dropdown-toggle" href="#">
@@ -164,16 +174,6 @@
 
                     </i>
                     {{ trans('cruds.setting.title') }}
-                </a>
-            </li>
-        @endcan
-        @can('send_redacted_cv_to_provider_access')
-            <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.send-redacted-cv-to-providers.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/send-redacted-cv-to-providers") || request()->is("admin/send-redacted-cv-to-providers/*") ? "c-active" : "" }}">
-                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
-
-                    </i>
-                    {{ trans('cruds.sendRedactedCvToProvider.title') }}
                 </a>
             </li>
         @endcan
