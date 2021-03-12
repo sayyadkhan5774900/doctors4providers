@@ -10,7 +10,6 @@ class CreateProvidersTable extends Migration
     {
         Schema::create('providers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
             $table->string('phone');
             $table->string('email');
             $table->date('date_of_agreement');
@@ -23,9 +22,7 @@ class CreateProvidersTable extends Migration
             $table->longText('emr_system')->nullable();
             $table->longText('meeting_time')->nullable();
             $table->date('begin_seeing_patients')->nullable();
-            $table->string('have_malpractice');
             $table->string('agent_can_contact')->nullable();
-            $table->string('have_billing_company');
             $table->string('billing_company_can_contact')->nullable();
             $table->decimal('monthly_budget', 15, 2);
             $table->longText('additional_notes')->nullable();
@@ -34,6 +31,10 @@ class CreateProvidersTable extends Migration
             $table->longText('prescribing_substances');
             $table->string('provider_need_collaborative_speak')->nullable();
             $table->longText('unique_request')->nullable();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('have_malpractice');
+            $table->string('have_billing_company');
             $table->timestamps();
             $table->softDeletes();
         });

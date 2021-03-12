@@ -65,16 +65,6 @@
                 </a>
             </li>
         @endcan
-        @can('redacted_cv_access')
-            <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.redacted-cvs.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/redacted-cvs") || request()->is("admin/redacted-cvs/*") ? "c-active" : "" }}">
-                    <i class="fa-fw fas fa-file c-sidebar-nav-icon">
-
-                    </i>
-                    {{ trans('cruds.redactedCv.title') }}
-                </a>
-            </li>
-        @endcan
         @can('customize_notification_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route("admin.customize-notifications.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/customize-notifications") || request()->is("admin/customize-notifications/*") ? "c-active" : "" }}">
@@ -174,6 +164,136 @@
 
                     </i>
                     {{ trans('cruds.setting.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('send_redacted_cv_to_provider_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.send-redacted-cv-to-providers.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/send-redacted-cv-to-providers") || request()->is("admin/send-redacted-cv-to-providers/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.sendRedactedCvToProvider.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('view_providers_message_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.view-providers-messages.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/view-providers-messages") || request()->is("admin/view-providers-messages/*") ? "c-active" : "" }}">
+                    <i class="fa-fw far fa-comment-alt c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.viewProvidersMessage.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('view_zoom_link_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.view-zoom-links.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/view-zoom-links") || request()->is("admin/view-zoom-links/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-link c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.viewZoomLink.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('chat_with_provider_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.chat-with-providers.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/chat-with-providers") || request()->is("admin/chat-with-providers/*") ? "c-active" : "" }}">
+                    <i class="fa-fw far fa-comments c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.chatWithProvider.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('update_information_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.update-informations.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/update-informations") || request()->is("admin/update-informations/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-edit c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.updateInformation.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('contact_with_admin_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.contact-with-admins.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/contact-with-admins") || request()->is("admin/contact-with-admins/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-user-tie c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.contactWithAdmin.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('view_doctors_message_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.view-doctors-messages.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/view-doctors-messages") || request()->is("admin/view-doctors-messages/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-comment-alt c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.viewDoctorsMessage.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('view_admin_message_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.view-admin-messages.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/view-admin-messages") || request()->is("admin/view-admin-messages/*") ? "c-active" : "" }}">
+                    <i class="fa-fw far fa-comment-alt c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.viewAdminMessage.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('select_meeting_time_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.select-meeting-times.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/select-meeting-times") || request()->is("admin/select-meeting-times/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fab fa-meetup c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.selectMeetingTime.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('chat_with_admin_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.chat-with-admins.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/chat-with-admins") || request()->is("admin/chat-with-admins/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-comments c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.chatWithAdmin.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('chat_with_doctor_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.chat-with-doctors.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/chat-with-doctors") || request()->is("admin/chat-with-doctors/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-headset c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.chatWithDoctor.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('view_meeting_link_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.view-meeting-links.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/view-meeting-links") || request()->is("admin/view-meeting-links/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-link c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.viewMeetingLink.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('agreement_completion_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.agreement-completions.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/agreement-completions") || request()->is("admin/agreement-completions/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.agreementCompletion.title') }}
                 </a>
             </li>
         @endcan

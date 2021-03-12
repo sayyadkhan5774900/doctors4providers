@@ -128,50 +128,98 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 30,
-                'title' => 'redacted_cv_access',
-            ],
-            [
-                'id'    => 31,
                 'title' => 'customize_notification_access',
             ],
             [
-                'id'    => 32,
+                'id'    => 31,
                 'title' => 'doctors_message_approvel_access',
             ],
             [
-                'id'    => 33,
+                'id'    => 32,
                 'title' => 'provider_messages_approval_access',
             ],
             [
-                'id'    => 34,
+                'id'    => 33,
                 'title' => 'send_payment_link_access',
             ],
             [
-                'id'    => 35,
+                'id'    => 34,
                 'title' => 'send_zoom_link_access',
             ],
             [
-                'id'    => 36,
+                'id'    => 35,
                 'title' => 'setting_create',
             ],
             [
-                'id'    => 37,
+                'id'    => 36,
                 'title' => 'setting_edit',
             ],
             [
-                'id'    => 38,
+                'id'    => 37,
                 'title' => 'setting_show',
             ],
             [
-                'id'    => 39,
+                'id'    => 38,
                 'title' => 'setting_delete',
             ],
             [
-                'id'    => 40,
+                'id'    => 39,
                 'title' => 'setting_access',
             ],
             [
+                'id'    => 40,
+                'title' => 'send_redacted_cv_to_provider_access',
+            ],
+            [
                 'id'    => 41,
+                'title' => 'view_providers_message_access',
+            ],
+            [
+                'id'    => 42,
+                'title' => 'view_zoom_link_access',
+            ],
+            [
+                'id'    => 43,
+                'title' => 'chat_with_provider_access',
+            ],
+            [
+                'id'    => 44,
+                'title' => 'update_information_access',
+            ],
+            [
+                'id'    => 45,
+                'title' => 'contact_with_admin_access',
+            ],
+            [
+                'id'    => 46,
+                'title' => 'view_doctors_message_access',
+            ],
+            [
+                'id'    => 47,
+                'title' => 'view_admin_message_access',
+            ],
+            [
+                'id'    => 48,
+                'title' => 'select_meeting_time_access',
+            ],
+            [
+                'id'    => 49,
+                'title' => 'chat_with_admin_access',
+            ],
+            [
+                'id'    => 50,
+                'title' => 'chat_with_doctor_access',
+            ],
+            [
+                'id'    => 51,
+                'title' => 'view_meeting_link_access',
+            ],
+            [
+                'id'    => 52,
+                'title' => 'agreement_completion_access',
+            ],
+            [
+                'id'    => 53,
                 'title' => 'profile_password_edit',
             ],
         ];

@@ -28,7 +28,8 @@ class Doctor extends Model implements HasMedia
     ];
 
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'phone',
         'address',

@@ -25,10 +25,18 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.provider.fields.name') }}
+                            {{ trans('cruds.provider.fields.first_name') }}
                         </th>
                         <td>
-                            {{ $provider->name }}
+                            {{ $provider->first_name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.provider.fields.last_name') }}
+                        </th>
+                        <td>
+                            {{ $provider->last_name }}
                         </td>
                     </tr>
                     <tr>
@@ -132,7 +140,7 @@
                             {{ trans('cruds.provider.fields.have_malpractice') }}
                         </th>
                         <td>
-                            {{ App\Models\Provider::HAVE_MALPRACTICE_SELECT[$provider->have_malpractice] ?? '' }}
+                            {{ $provider->have_malpractice }}
                         </td>
                     </tr>
                     <tr>

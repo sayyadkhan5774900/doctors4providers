@@ -35,7 +35,7 @@ class DoctorController extends Controller
 
     public function store(StoreDoctorRequest $request)
     {
-        $doctor = Doctor::create($request->validated());
+        $doctor = Doctor::create($request->all());
 
         if ($request->input('cv', false)) {
             $doctor->addMedia(storage_path('tmp/uploads/' . basename($request->input('cv'))))->toMediaCollection('cv');
@@ -61,7 +61,7 @@ class DoctorController extends Controller
 
     public function update(UpdateDoctorRequest $request, Doctor $doctor)
     {
-        $doctor->update($request->validated());
+        $doctor->update($request->all());
 
         if ($request->input('cv', false)) {
             if (!$doctor->cv || $request->input('cv') !== $doctor->cv->file_name) {

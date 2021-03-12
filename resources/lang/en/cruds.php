@@ -79,8 +79,6 @@ return [
         'fields'         => [
             'id'                                 => 'ID',
             'id_helper'                          => ' ',
-            'name'                               => 'Enter first & last name',
-            'name_helper'                        => ' ',
             'email'                              => 'Enter your email',
             'email_helper'                       => ' ',
             'phone'                              => 'Please provide your phone number preferred for correspondence',
@@ -117,6 +115,10 @@ return [
             'cv_helper'                          => ' ',
             'redacted_cv'                        => 'Upload Redacted CV',
             'redacted_cv_helper'                 => ' ',
+            'last_name'                          => 'Last Name',
+            'last_name_helper'                   => ' ',
+            'first_name'                         => 'First Name',
+            'first_name_helper'                  => ' ',
         ],
     ],
     'provider'                 => [
@@ -125,8 +127,6 @@ return [
         'fields'         => [
             'id'                                       => 'ID',
             'id_helper'                                => ' ',
-            'name'                                     => 'Enter first & last name',
-            'name_helper'                              => ' ',
             'phone'                                    => 'Please provide your phone number preferred for correspondence',
             'phone_helper'                             => ' ',
             'created_at'                               => 'Created at',
@@ -157,12 +157,8 @@ return [
             'meeting_time_helper'                      => 'every Monday at 9 am for 30 min, first Thursday of each month, etc',
             'begin_seeing_patients'                    => 'When will you begin seeing patients?',
             'begin_seeing_patients_helper'             => ' ',
-            'have_malpractice'                         => 'Do you currently have malpractice or a professional liability insurance policy?',
-            'have_malpractice_helper'                  => ' ',
             'agent_can_contact'                        => 'Would you like an insurance agent to contact you about getting you a malpractice policy?',
             'agent_can_contact_helper'                 => ' ',
-            'have_billing_company'                     => 'Do you already have a billing company?',
-            'have_billing_company_helper'              => ' ',
             'billing_company_can_contact'              => 'Would you like to be contacted by a prospective billing company?',
             'billing_company_can_contact_helper'       => ' ',
             'monthly_budget'                           => 'MonthlMonthly budget allotted for collaborative needsy Budget',
@@ -183,6 +179,14 @@ return [
             'cv_helper'                                => ' ',
             'redacted_cv'                              => 'Upload Redacted CV',
             'redacted_cv_helper'                       => ' ',
+            'first_name'                               => 'First Name',
+            'first_name_helper'                        => ' ',
+            'last_name'                                => 'Last Name',
+            'last_name_helper'                         => ' ',
+            'have_malpractice'                         => 'Do you currently have malpractice or a professional liability insurance policy?',
+            'have_malpractice_helper'                  => ' ',
+            'have_billing_company'                     => 'Do you already have a billing company?',
+            'have_billing_company_helper'              => ' ',
         ],
     ],
     'agreementProgress'        => [
@@ -196,10 +200,6 @@ return [
     'redactDoctorCv'           => [
         'title'          => 'Redact Doctor CV',
         'title_singular' => 'Redact Doctor CV',
-    ],
-    'redactedCv'               => [
-        'title'          => 'Redacted CV',
-        'title_singular' => 'Redacted CV',
     ],
     'customizeNotification'    => [
         'title'          => 'Customize Notifications',
@@ -238,5 +238,57 @@ return [
             'deleted_at'        => 'Deleted at',
             'deleted_at_helper' => ' ',
         ],
+    ],
+    'sendRedactedCvToProvider' => [
+        'title'          => 'Send Redacted Cv To Provider',
+        'title_singular' => 'Send Redacted Cv To Provider',
+    ],
+    'viewProvidersMessage'     => [
+        'title'          => 'View Providers Messages',
+        'title_singular' => 'View Providers Message',
+    ],
+    'viewZoomLink'             => [
+        'title'          => 'View Zoom Links',
+        'title_singular' => 'View Zoom Link',
+    ],
+    'chatWithProvider'         => [
+        'title'          => 'Chat With Provider',
+        'title_singular' => 'Chat With Provider',
+    ],
+    'updateInformation'        => [
+        'title'          => 'Update Information',
+        'title_singular' => 'Update Information',
+    ],
+    'contactWithAdmin'         => [
+        'title'          => 'Contact With Admin',
+        'title_singular' => 'Contact With Admin',
+    ],
+    'viewDoctorsMessage'       => [
+        'title'          => 'View Doctors Messages',
+        'title_singular' => 'View Doctors Message',
+    ],
+    'viewAdminMessage'         => [
+        'title'          => 'View Admin Messages',
+        'title_singular' => 'View Admin Message',
+    ],
+    'selectMeetingTime'        => [
+        'title'          => 'Select Meeting Time',
+        'title_singular' => 'Select Meeting Time',
+    ],
+    'chatWithAdmin'            => [
+        'title'          => 'Chat With Admin',
+        'title_singular' => 'Chat With Admin',
+    ],
+    'chatWithDoctor'           => [
+        'title'          => 'Chat With Doctor',
+        'title_singular' => 'Chat With Doctor',
+    ],
+    'viewMeetingLink'          => [
+        'title'          => 'View Meeting Links',
+        'title_singular' => 'View Meeting Link',
+    ],
+    'agreementCompletion'      => [
+        'title'          => 'Agreement Completion',
+        'title_singular' => 'Agreement Completion',
     ],
 ];

@@ -25,10 +25,18 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.doctor.fields.name') }}
+                            {{ trans('cruds.doctor.fields.first_name') }}
                         </th>
                         <td>
-                            {{ $doctor->name }}
+                            {{ $doctor->first_name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.doctor.fields.last_name') }}
+                        </th>
+                        <td>
+                            {{ $doctor->last_name }}
                         </td>
                     </tr>
                     <tr>

@@ -26,7 +26,10 @@
                             {{ trans('cruds.doctor.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.doctor.fields.name') }}
+                            {{ trans('cruds.doctor.fields.first_name') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.doctor.fields.last_name') }}
                         </th>
                         <th>
                             {{ trans('cruds.doctor.fields.email') }}
@@ -52,7 +55,10 @@
                                 {{ $doctor->id ?? '' }}
                             </td>
                             <td>
-                                {{ $doctor->name ?? '' }}
+                                {{ $doctor->first_name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $doctor->last_name ?? '' }}
                             </td>
                             <td>
                                 {{ $doctor->email ?? '' }}

@@ -35,7 +35,7 @@ class ProviderController extends Controller
 
     public function store(StoreProviderRequest $request)
     {
-        $provider = Provider::create($request->validated());
+        $provider = Provider::create($request->all());
 
         if ($request->input('cv', false)) {
             $provider->addMedia(storage_path('tmp/uploads/' . basename($request->input('cv'))))->toMediaCollection('cv');
@@ -61,7 +61,7 @@ class ProviderController extends Controller
 
     public function update(UpdateProviderRequest $request, Provider $provider)
     {
-        $provider->update($request->validated());
+        $provider->update($request->all());
 
         if ($request->input('cv', false)) {
             if (!$provider->cv || $request->input('cv') !== $provider->cv->file_name) {
