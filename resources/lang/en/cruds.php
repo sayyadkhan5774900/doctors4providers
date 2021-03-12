@@ -201,10 +201,6 @@ return [
         'title'          => 'Redact Doctor CV',
         'title_singular' => 'Redact Doctor CV',
     ],
-    'redactedCv'               => [
-        'title'          => 'Redacted CV',
-        'title_singular' => 'Redacted CV',
-    ],
     'customizeNotification'    => [
         'title'          => 'Customize Notifications',
         'title_singular' => 'Customize Notification',
@@ -242,5 +238,57 @@ return [
             'deleted_at'        => 'Deleted at',
             'deleted_at_helper' => ' ',
         ],
+    ],
+    'sendRedactedCvToProvider' => [
+        'title'          => 'Send Redacted Cv To Provider',
+        'title_singular' => 'Send Redacted Cv To Provider',
+    ],
+    'viewProvidersMessage'     => [
+        'title'          => 'View Providers Messages',
+        'title_singular' => 'View Providers Message',
+    ],
+    'viewZoomLink'             => [
+        'title'          => 'View Zoom Links',
+        'title_singular' => 'View Zoom Link',
+    ],
+    'chatWithProvider'         => [
+        'title'          => 'Chat With Provider',
+        'title_singular' => 'Chat With Provider',
+    ],
+    'updateInformation'        => [
+        'title'          => 'Update Information',
+        'title_singular' => 'Update Information',
+    ],
+    'contactWithAdmin'         => [
+        'title'          => 'Contact With Admin',
+        'title_singular' => 'Contact With Admin',
+    ],
+    'viewDoctorsMessage'       => [
+        'title'          => 'View Doctors Messages',
+        'title_singular' => 'View Doctors Message',
+    ],
+    'viewAdminMessage'         => [
+        'title'          => 'View Admin Messages',
+        'title_singular' => 'View Admin Message',
+    ],
+    'selectMeetingTime'        => [
+        'title'          => 'Select Meeting Time',
+        'title_singular' => 'Select Meeting Time',
+    ],
+    'chatWithAdmin'            => [
+        'title'          => 'Chat With Admin',
+        'title_singular' => 'Chat With Admin',
+    ],
+    'chatWithDoctor'           => [
+        'title'          => 'Chat With Doctor',
+        'title_singular' => 'Chat With Doctor',
+    ],
+    'viewMeetingLink'          => [
+        'title'          => 'View Meeting Links',
+        'title_singular' => 'View Meeting Link',
+    ],
+    'agreementCompletion'      => [
+        'title'          => 'Agreement Completion',
+        'title_singular' => 'Agreement Completion',
     ],
 ];

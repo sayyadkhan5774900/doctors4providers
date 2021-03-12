@@ -39,9 +39,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Redact Doctor Cvs
     Route::resource('redact-doctor-cvs', 'RedactDoctorCvController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 
-    // Redacted Cvs
-    Route::resource('redacted-cvs', 'RedactedCvController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
-
     // Customize Notifications
     Route::resource('customize-notifications', 'CustomizeNotificationsController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 
@@ -60,6 +57,45 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Settings
     Route::delete('settings/destroy', 'SettingController@massDestroy')->name('settings.massDestroy');
     Route::resource('settings', 'SettingController');
+
+    // Send Redacted Cv To Providers
+    Route::resource('send-redacted-cv-to-providers', 'SendRedactedCvToProviderController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // View Providers Messages
+    Route::resource('view-providers-messages', 'ViewProvidersMessagesController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // View Zoom Links
+    Route::resource('view-zoom-links', 'ViewZoomLinksController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Chat With Providers
+    Route::resource('chat-with-providers', 'ChatWithProviderController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Update Informations
+    Route::resource('update-informations', 'UpdateInformationController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Contact With Admins
+    Route::resource('contact-with-admins', 'ContactWithAdminController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // View Doctors Messages
+    Route::resource('view-doctors-messages', 'ViewDoctorsMessagesController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // View Admin Messages
+    Route::resource('view-admin-messages', 'ViewAdminMessagesController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Select Meeting Times
+    Route::resource('select-meeting-times', 'SelectMeetingTimeController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Chat With Admins
+    Route::resource('chat-with-admins', 'ChatWithAdminController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Chat With Doctors
+    Route::resource('chat-with-doctors', 'ChatWithDoctorController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // View Meeting Links
+    Route::resource('view-meeting-links', 'ViewMeetingLinksController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Agreement Completions
+    Route::resource('agreement-completions', 'AgreementCompletionController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 
     Route::get('messenger', 'MessengerController@index')->name('messenger.index');
     Route::get('messenger/create', 'MessengerController@createTopic')->name('messenger.createTopic');
@@ -116,9 +152,6 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     // Redact Doctor Cvs
     Route::resource('redact-doctor-cvs', 'RedactDoctorCvController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 
-    // Redacted Cvs
-    Route::resource('redacted-cvs', 'RedactedCvController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
-
     // Customize Notifications
     Route::resource('customize-notifications', 'CustomizeNotificationsController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 
@@ -137,6 +170,45 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     // Settings
     Route::delete('settings/destroy', 'SettingController@massDestroy')->name('settings.massDestroy');
     Route::resource('settings', 'SettingController');
+
+    // Send Redacted Cv To Providers
+    Route::resource('send-redacted-cv-to-providers', 'SendRedactedCvToProviderController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // View Providers Messages
+    Route::resource('view-providers-messages', 'ViewProvidersMessagesController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // View Zoom Links
+    Route::resource('view-zoom-links', 'ViewZoomLinksController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Chat With Providers
+    Route::resource('chat-with-providers', 'ChatWithProviderController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Update Informations
+    Route::resource('update-informations', 'UpdateInformationController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Contact With Admins
+    Route::resource('contact-with-admins', 'ContactWithAdminController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // View Doctors Messages
+    Route::resource('view-doctors-messages', 'ViewDoctorsMessagesController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // View Admin Messages
+    Route::resource('view-admin-messages', 'ViewAdminMessagesController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Select Meeting Times
+    Route::resource('select-meeting-times', 'SelectMeetingTimeController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Chat With Admins
+    Route::resource('chat-with-admins', 'ChatWithAdminController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Chat With Doctors
+    Route::resource('chat-with-doctors', 'ChatWithDoctorController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // View Meeting Links
+    Route::resource('view-meeting-links', 'ViewMeetingLinksController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+
+    // Agreement Completions
+    Route::resource('agreement-completions', 'AgreementCompletionController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 
     Route::get('frontend/profile', 'ProfileController@index')->name('profile.index');
     Route::post('frontend/profile', 'ProfileController@update')->name('profile.update');
