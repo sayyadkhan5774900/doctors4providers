@@ -17,7 +17,11 @@ class StoreProviderRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'                              => [
+            'first_name'                        => [
+                'string',
+                'required',
+            ],
+            'last_name'                         => [
                 'string',
                 'required',
             ],
@@ -50,6 +54,7 @@ class StoreProviderRequest extends FormRequest
                 'nullable',
             ],
             'have_malpractice'                  => [
+                'string',
                 'required',
             ],
             'have_billing_company'              => [

@@ -26,7 +26,10 @@
                             {{ trans('cruds.provider.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.provider.fields.name') }}
+                            {{ trans('cruds.provider.fields.first_name') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.provider.fields.last_name') }}
                         </th>
                         <th>
                             {{ trans('cruds.provider.fields.email') }}
@@ -76,7 +79,10 @@
                                 {{ $provider->id ?? '' }}
                             </td>
                             <td>
-                                {{ $provider->name ?? '' }}
+                                {{ $provider->first_name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $provider->last_name ?? '' }}
                             </td>
                             <td>
                                 {{ $provider->email ?? '' }}
@@ -94,7 +100,7 @@
                                 {{ $provider->begin_seeing_patients ?? '' }}
                             </td>
                             <td>
-                                {{ App\Models\Provider::HAVE_MALPRACTICE_SELECT[$provider->have_malpractice] ?? '' }}
+                                {{ $provider->have_malpractice ?? '' }}
                             </td>
                             <td>
                                 {{ App\Models\Provider::AGENT_CAN_CONTACT_SELECT[$provider->agent_can_contact] ?? '' }}

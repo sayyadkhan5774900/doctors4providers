@@ -10,7 +10,6 @@ class CreateDoctorsTable extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
             $table->string('email');
             $table->string('phone');
             $table->longText('address');
@@ -24,6 +23,8 @@ class CreateDoctorsTable extends Migration
             $table->longText('have_malpractice');
             $table->longText('additional_notes')->nullable();
             $table->longText('monthly_stipend');
+            $table->string('last_name');
+            $table->string('first_name');
             $table->timestamps();
             $table->softDeletes();
         });

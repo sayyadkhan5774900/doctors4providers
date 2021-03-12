@@ -11,14 +11,24 @@
             @method('PUT')
             @csrf
             <div class="form-group">
-                <label class="required" for="name">{{ trans('cruds.provider.fields.name') }}</label>
-                <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" type="text" name="name" id="name" value="{{ old('name', $provider->name) }}" required>
-                @if($errors->has('name'))
+                <label class="required" for="first_name">{{ trans('cruds.provider.fields.first_name') }}</label>
+                <input class="form-control {{ $errors->has('first_name') ? 'is-invalid' : '' }}" type="text" name="first_name" id="first_name" value="{{ old('first_name', $provider->first_name) }}" required>
+                @if($errors->has('first_name'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('name') }}
+                        {{ $errors->first('first_name') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.provider.fields.name_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.provider.fields.first_name_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label class="required" for="last_name">{{ trans('cruds.provider.fields.last_name') }}</label>
+                <input class="form-control {{ $errors->has('last_name') ? 'is-invalid' : '' }}" type="text" name="last_name" id="last_name" value="{{ old('last_name', $provider->last_name) }}" required>
+                @if($errors->has('last_name'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('last_name') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.provider.fields.last_name_helper') }}</span>
             </div>
             <div class="form-group">
                 <label class="required" for="email">{{ trans('cruds.provider.fields.email') }}</label>
@@ -141,13 +151,8 @@
                 <span class="help-block">{{ trans('cruds.provider.fields.begin_seeing_patients_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required">{{ trans('cruds.provider.fields.have_malpractice') }}</label>
-                <select class="form-control {{ $errors->has('have_malpractice') ? 'is-invalid' : '' }}" name="have_malpractice" id="have_malpractice" required>
-                    <option value disabled {{ old('have_malpractice', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
-                    @foreach(App\Models\Provider::HAVE_MALPRACTICE_SELECT as $key => $label)
-                        <option value="{{ $key }}" {{ old('have_malpractice', $provider->have_malpractice) === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
-                    @endforeach
-                </select>
+                <label class="required" for="have_malpractice">{{ trans('cruds.provider.fields.have_malpractice') }}</label>
+                <input class="form-control {{ $errors->has('have_malpractice') ? 'is-invalid' : '' }}" type="text" name="have_malpractice" id="have_malpractice" value="{{ old('have_malpractice', $provider->have_malpractice) }}" required>
                 @if($errors->has('have_malpractice'))
                     <div class="invalid-feedback">
                         {{ $errors->first('have_malpractice') }}

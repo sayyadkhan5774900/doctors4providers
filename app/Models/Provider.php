@@ -22,11 +22,6 @@ class Provider extends Model implements HasMedia
         'redacted_cv',
     ];
 
-    const HAVE_MALPRACTICE_SELECT = [
-        'yes' => 'Yes',
-        'no'  => 'No',
-    ];
-
     const AGENT_CAN_CONTACT_SELECT = [
         'yes' => 'Yes',
         'no'  => 'No',
@@ -51,7 +46,8 @@ class Provider extends Model implements HasMedia
     ];
 
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'phone',
         'date_of_agreement',

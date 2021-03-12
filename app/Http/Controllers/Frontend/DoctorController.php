@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Traits\MediaUploadingTrait;
@@ -23,14 +23,14 @@ class DoctorController extends Controller
 
         $doctors = Doctor::with(['media'])->get();
 
-        return view('admin.doctors.index', compact('doctors'));
+        return view('frontend.doctors.index', compact('doctors'));
     }
 
     public function create()
     {
         abort_if(Gate::denies('doctor_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.doctors.create');
+        return view('frontend.doctors.create');
     }
 
     public function store(StoreDoctorRequest $request)
@@ -49,14 +49,14 @@ class DoctorController extends Controller
             Media::whereIn('id', $media)->update(['model_id' => $doctor->id]);
         }
 
-        return redirect()->route('admin.doctors.index');
+        return redirect()->route('frontend.doctors.index');
     }
 
     public function edit(Doctor $doctor)
     {
         abort_if(Gate::denies('doctor_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.doctors.edit', compact('doctor'));
+        return view('frontend.doctors.edit', compact('doctor'));
     }
 
     public function update(UpdateDoctorRequest $request, Doctor $doctor)
@@ -87,14 +87,14 @@ class DoctorController extends Controller
             $doctor->redacted_cv->delete();
         }
 
-        return redirect()->route('admin.doctors.index');
+        return redirect()->route('frontend.doctors.index');
     }
 
     public function show(Doctor $doctor)
     {
         abort_if(Gate::denies('doctor_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.doctors.show', compact('doctor'));
+        return view('frontend.doctors.show', compact('doctor'));
     }
 
     public function destroy(Doctor $doctor)
