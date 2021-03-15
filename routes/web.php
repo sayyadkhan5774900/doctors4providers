@@ -4,7 +4,7 @@ Route::view('/', 'welcome');
 Route::get('userVerification/{token}', 'UserVerificationController@approve')->name('userVerification');
 Auth::routes();
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
@@ -209,3 +209,11 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     Route::post('frontend/profile/destroy', 'ProfileController@destroy')->name('profile.destroy');
     Route::post('frontend/profile/password', 'ProfileController@password')->name('profile.password');
 });
+
+
+Route::get('registration', 'FrontendController@registration')->name('registration');
+
+
+Route::post('doctors/registration/media', 'DoctorRegistrationController@storeMedia')->name('doctors.registration.storeMedia');
+Route::post('doctors/registration/ckmedia', 'DoctorRegistrationController@storeCKEditorImages')->name('doctors.registration.storeCKEditorImages');
+Route::post('doctors/registration/store', 'DoctorRegistrationController@store')->name('doctors.registration.store');
