@@ -3,22 +3,6 @@ textarea {
     min-height: 150px;
 } */
 
-textarea {
-    border-radius: 30px!important;
-}
-
-input {
-    border-radius: 30px!important;
-}
-
-.dropzone {
-    border-radius: 70px!important;
-}
-
-.btn {
-    border-radius: 30px!important;
-}
-
 .datatable {
     width: 100% !important;
 }
