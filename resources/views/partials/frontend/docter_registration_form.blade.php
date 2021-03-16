@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route("doctors.registration.store") }}" enctype="multipart/form-data">
+<form id="docter_form" method="POST" action="{{ route("doctors.registration.store") }}" enctype="multipart/form-data">
     @method('POST')
     @csrf
    
@@ -201,9 +201,10 @@
         @endif
         <span class="help-block">{{ trans('cruds.doctor.fields.monthly_stipend_helper') }}</span>
     </div>
+   
     <div class="form-group">
         <label class="required" for="cv">{{ trans('cruds.doctor.fields.cv') }}</label>
-        <div class="needsclick dropzone" id="cv-dropzone">
+        <div class="needsclick dropzone" id="cv-dropzoneone">
         </div>
         @if($errors->has('cv'))
             <div class="invalid-feedback">
@@ -212,6 +213,7 @@
         @endif
         <span class="help-block">{{ trans('cruds.doctor.fields.cv_helper') }}</span>
     </div>
+
     <div class="form-group">
         <button class="btn btn-danger btn-lg btn-block" type="submit">
             {{ trans('global.save') }}

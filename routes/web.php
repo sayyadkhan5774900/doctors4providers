@@ -1,6 +1,8 @@
 <?php
 
-Route::view('/', 'welcome');
+// Route::view('/', 'welcome')->name('landing');
+Route::get('/', 'FrontendController@landing')->name('landing');
+
 Route::get('userVerification/{token}', 'UserVerificationController@approve')->name('userVerification');
 Auth::routes();
 
@@ -215,5 +217,8 @@ Route::get('registration', 'FrontendController@registration')->name('registratio
 
 
 Route::post('doctors/registration/media', 'DoctorRegistrationController@storeMedia')->name('doctors.registration.storeMedia');
-Route::post('doctors/registration/ckmedia', 'DoctorRegistrationController@storeCKEditorImages')->name('doctors.registration.storeCKEditorImages');
 Route::post('doctors/registration/store', 'DoctorRegistrationController@store')->name('doctors.registration.store');
+
+Route::post('providers/registration/media', 'ProviderRegistrationController@storeMedia')->name('providers.registration.storeMedia');
+Route::post('providers/registration/store', 'ProviderRegistrationController@store')->name('providers.registration.store');
+

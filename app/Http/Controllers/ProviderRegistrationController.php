@@ -2,83 +2,103 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Traits\MediaUploadingTrait;
+use App\Models\Provider;
 use Illuminate\Http\Request;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProviderRegistrationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+    use MediaUploadingTrait;
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+
+        $this->validateData($request);
+
+        $provider = Provider::create($request->all());
+
+        if ($request->input('cv', false)) {
+            $provider->addMedia(storage_path('tmp/uploads/' . basename($request->input('cv'))))->toMediaCollection('cv');
+        }
+
+        if ($request->input('redacted_cv', false)) {
+            $provider->addMedia(storage_path('tmp/uploads/' . basename($request->input('redacted_cv'))))->toMediaCollection('redacted_cv');
+        }
+
+        if ($media = $request->input('ck-media', false)) {
+            Media::whereIn('id', $media)->update(['model_id' => $provider->id]);
+        }
+
+        return redirect()->route('landing')->withMessage('We have matched you with a doctor in our database and we (or the doctor) will be getting back with you shortly with your match');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    private function validateData(Request $request)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $request->validate([
+            'first_name'                        => [
+                'string',
+                'required',
+            ],
+            'last_name'                         => [
+                'string',
+                'required',
+            ],
+            'email'                             => [
+                'required',
+            ],
+            'phone'                             => [
+                'string',
+                'required',
+            ],
+            'date_of_agreement'                 => [
+                'required',
+                'date_format:' . config('panel.date_format'),
+            ],
+            'collaborative_need'                => [
+                'required',
+            ],
+            'practice_states'                   => [
+                'string',
+                'required',
+            ],
+            'communication_form'                => [
+                'required',
+            ],
+            'collaborative_communication'       => [
+                'required',
+            ],
+            'begin_seeing_patients'             => [
+                'date_format:' . config('panel.date_format'),
+                'nullable',
+            ],
+            'have_malpractice'                  => [
+                'string',
+                'required',
+            ],
+            'have_billing_company'              => [
+                'required',
+            ],
+            'monthly_budget'                    => [
+                'required',
+            ],
+            'percentage_of_chart'               => [
+                'required',
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+            ],
+            'need_prescriptive_authority'       => [
+                'string',
+                'required',
+            ],
+            'prescribing_substances'            => [
+                'required',
+            ],
+            'provider_need_collaborative_speak' => [
+                'string',
+                'nullable',
+            ],
+        ]);
     }
 }

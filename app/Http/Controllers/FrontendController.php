@@ -10,4 +10,9 @@ class FrontendController extends Controller
     {
         return view('frontend.registration');
     }
+   
+    public function landing()
+    {
+        return view('welcome');
+    }
 }
