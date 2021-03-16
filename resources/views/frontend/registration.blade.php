@@ -4,27 +4,33 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
 
-            <nav>
+          <div class="card">
+            <div class="my-2 p-2 text-center text-primary h4">Create an Account!</div>
+            <div class="card-body">
+              <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                   <a class="nav-item nav-link active" id="nav-doctor-tab" data-toggle="tab" href="#nav-doctor" role="tab" aria-controls="nav-doctor" aria-selected="true">Register as Doctor</a>
                   <a class="nav-item nav-link" id="nav-provider-tab" data-toggle="tab" href="#nav-provider" role="tab" aria-controls="nav-provider" aria-selected="false">Register as Provider</a>
                 </div>
-            </nav>
-           
-            <div class="mt-4">
-                <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-doctor" role="tabpanel" aria-labelledby="nav-doctor-tab">
+              </nav>
+            
+              <div class="mt-4">
+                  <div class="tab-content" id="nav-tabContent">
+                      <div class="tab-pane fade show active" id="nav-doctor" role="tabpanel" aria-labelledby="nav-doctor-tab">
 
-                        @include('partials.frontend.docter_registration_form')
+                          @include('partials.frontend.docter_registration_form')
 
-                    </div>
-                    <div class="tab-pane fade" id="nav-provider" role="tabpanel" aria-labelledby="nav-provider-tab">
+                      </div>
+                      <div class="tab-pane fade" id="nav-provider" role="tabpanel" aria-labelledby="nav-provider-tab">
 
-                        @include('partials.frontend.provider_registration_form')
+                          @include('partials.frontend.provider_registration_form')
 
-                    </div>
-                </div>
+                      </div>
+                  </div>
+              </div>
+
             </div>
+          </div>
             
         </div>
     </div>
