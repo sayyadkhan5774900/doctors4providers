@@ -3,6 +3,22 @@ textarea {
     min-height: 150px;
 } */
 
+textarea {
+    border-radius: 30px!important;
+}
+
+input {
+    border-radius: 30px!important;
+}
+
+.dropzone {
+    border-radius: 70px!important;
+}
+
+.btn {
+    border-radius: 30px!important;
+}
+
 .datatable {
     width: 100% !important;
 }
@@ -88,7 +104,7 @@ table.dataTable thead .sorting_desc {
     border-color: #d1dbe1;
 }
 
-.btn-group-xs > .btn,
+.btn-group-xs>.btn,
 .btn-xs {
     padding: 1px 5px;
     font-size: 12px;
@@ -99,16 +115,20 @@ table.dataTable thead .sorting_desc {
 .searchable-title {
     font-weight: bold;
 }
+
 .searchable-fields {
-    padding-left:5px;
+    padding-left: 5px;
 }
+
 .searchable-link {
-    padding:0 5px 0 5px;
+    padding: 0 5px 0 5px;
 }
-.searchable-link:hover   {
+
+.searchable-link:hover {
     cursor: pointer;
     background: #eaeaea;
 }
+
 .select2-results__option {
     padding-left: 0px;
     padding-right: 0px;
@@ -119,7 +139,7 @@ table.dataTable thead .sorting_desc {
     color: red;
 }
 
-.form-check.is-invalid ~ .invalid-feedback {
+.form-check.is-invalid~.invalid-feedback {
     display: block;
 }
 
