@@ -1,4 +1,4 @@
-<form method="POST" action="{{ route("frontend.providers.store") }}" enctype="multipart/form-data">
+<form id="provider_form" method="POST" action="{{ route("providers.registration.store") }}" enctype="multipart/form-data">
     @method('POST')
     @csrf
 
@@ -56,6 +56,17 @@
                 <span class="help-block">{{ trans('cruds.provider.fields.phone_helper') }}</span>
             </div>
         </div>
+    </div>
+
+    <div class="form-group">
+        <label class="required" for="date_of_agreement">{{ trans('cruds.provider.fields.date_of_agreement') }}</label>
+        <input class="form-control date" type="text" name="date_of_agreement" id="date_of_agreement" value="{{ old('date_of_agreement') }}" required>
+        @if($errors->has('date_of_agreement'))
+            <div class="invalid-feedback">
+                {{ $errors->first('date_of_agreement') }}
+            </div>
+        @endif
+        <span class="help-block">{{ trans('cruds.provider.fields.date_of_agreement_helper') }}</span>
     </div>
 
     <div class="row">
@@ -320,7 +331,7 @@
   
     <div class="form-group">
         <label for="cv">{{ trans('cruds.provider.fields.cv') }}</label>
-        <div class="needsclick dropzone" id="cv-dropzone">
+        <div class="needsclick dropzone" id="cv-dropzonetwo">
         </div>
         @if($errors->has('cv'))
             <div class="invalid-feedback">
