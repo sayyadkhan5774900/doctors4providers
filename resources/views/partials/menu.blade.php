@@ -65,16 +65,6 @@
                 </a>
             </li>
         @endcan
-        @can('customize_notification_access')
-            <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.customize-notifications.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/customize-notifications") || request()->is("admin/customize-notifications/*") ? "c-active" : "" }}">
-                    <i class="fa-fw far fa-bell c-sidebar-nav-icon">
-
-                    </i>
-                    {{ trans('cruds.customizeNotification.title') }}
-                </a>
-            </li>
-        @endcan
         @can('doctors_message_approvel_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route("admin.doctors-message-approvels.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/doctors-message-approvels") || request()->is("admin/doctors-message-approvels/*") ? "c-active" : "" }}">
@@ -112,6 +102,16 @@
 
                     </i>
                     {{ trans('cruds.sendZoomLink.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('setting_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.settings.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/settings") || request()->is("admin/settings/*") ? "c-active" : "" }}">
+                    <i class="fa-fw far fa-bell c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.setting.title') }}
                 </a>
             </li>
         @endcan
@@ -165,16 +165,6 @@
                         </li>
                     @endcan
                 </ul>
-            </li>
-        @endcan
-        @can('setting_access')
-            <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.settings.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/settings") || request()->is("admin/settings/*") ? "c-active" : "" }}">
-                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
-
-                    </i>
-                    {{ trans('cruds.setting.title') }}
-                </a>
             </li>
         @endcan
         @can('view_providers_message_access')

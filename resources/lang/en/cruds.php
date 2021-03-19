@@ -201,10 +201,6 @@ return [
         'title'          => 'Redact Doctor CV',
         'title_singular' => 'Redact Doctor CV',
     ],
-    'customizeNotification'    => [
-        'title'          => 'Customize Notifications',
-        'title_singular' => 'Customize Notification',
-    ],
     'doctorsMessageApprovel'   => [
         'title'          => 'Doctors Message Approvels',
         'title_singular' => 'Doctors Message Approvel',
@@ -222,8 +218,8 @@ return [
         'title_singular' => 'Send Zoom Link',
     ],
     'setting'                  => [
-        'title'          => 'Setting',
-        'title_singular' => 'Setting',
+        'title'          => 'Customize Notification',
+        'title_singular' => 'Customize Notification',
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => ' ',

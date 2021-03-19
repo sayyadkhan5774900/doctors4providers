@@ -39,9 +39,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Redact Doctor Cvs
     Route::resource('redact-doctor-cvs', 'RedactDoctorCvController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 
-    // Customize Notifications
-    Route::resource('customize-notifications', 'CustomizeNotificationsController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
-
     // Doctors Message Approvels
     Route::resource('doctors-message-approvels', 'DoctorsMessageApprovelsController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 
@@ -151,9 +148,6 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
 
     // Redact Doctor Cvs
     Route::resource('redact-doctor-cvs', 'RedactDoctorCvController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
-
-    // Customize Notifications
-    Route::resource('customize-notifications', 'CustomizeNotificationsController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
 
     // Doctors Message Approvels
     Route::resource('doctors-message-approvels', 'DoctorsMessageApprovelsController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
