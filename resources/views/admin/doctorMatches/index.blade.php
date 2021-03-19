@@ -14,21 +14,13 @@
                         Providers
                     </div>
                     <div class="card-body">
-                        <div class="card mb-0">
-                            <div class="card-header">
-                                <a href="">Provider</a>
-                            </div>
-                        </div>
-                        <div class="card mb-0">
-                            <div class="card-header">
-                                <a href="">Provider</a>
-                            </div>
-                        </div>
-                        <div class="card mb-0">
-                            <div class="card-header">
-                                <a href="">Provider</a>
-                            </div>
-                        </div>
+                        <ul class="list-group">
+                            <a href="#"> <li class="list-group-item active">Cras justo odio</li></a>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                          </ul>
                     </div>
                 </div>
             </div>
@@ -59,9 +51,6 @@
                                         </th>
                                         <th>
                                             Amount
-                                        </th>
-                                        <th>
-                                            &nbsp;
                                         </th>
                                     </tr>
                                 </thead>
