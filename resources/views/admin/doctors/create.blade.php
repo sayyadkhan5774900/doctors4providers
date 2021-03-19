@@ -151,7 +151,7 @@
             </div>
             <div class="form-group">
                 <label class="required" for="monthly_stipend">{{ trans('cruds.doctor.fields.monthly_stipend') }}</label>
-                <textarea class="form-control {{ $errors->has('monthly_stipend') ? 'is-invalid' : '' }}" name="monthly_stipend" id="monthly_stipend" required>{{ old('monthly_stipend') }}</textarea>
+                <input class="form-control {{ $errors->has('monthly_stipend') ? 'is-invalid' : '' }}" type="number" name="monthly_stipend" id="monthly_stipend" value="{{ old('monthly_stipend', '') }}" step="0.01" required>
                 @if($errors->has('monthly_stipend'))
                     <div class="invalid-feedback">
                         {{ $errors->first('monthly_stipend') }}

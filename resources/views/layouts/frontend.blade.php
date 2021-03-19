@@ -87,6 +87,11 @@
                                             {{ trans('cruds.provider.title') }}
                                         </a>
                                     @endcan
+                                    @can('setting_access')
+                                        <a class="dropdown-item" href="{{ route('frontend.settings.index') }}">
+                                            {{ trans('cruds.setting.title') }}
+                                        </a>
+                                    @endcan
                                     @can('user_management_access')
                                         <a class="dropdown-item disabled" href="#">
                                             {{ trans('cruds.userManagement.title') }}
@@ -105,11 +110,6 @@
                                     @can('user_access')
                                         <a class="dropdown-item ml-3" href="{{ route('frontend.users.index') }}">
                                             {{ trans('cruds.user.title') }}
-                                        </a>
-                                    @endcan
-                                    @can('setting_access')
-                                        <a class="dropdown-item" href="{{ route('frontend.settings.index') }}">
-                                            {{ trans('cruds.setting.title') }}
                                         </a>
                                     @endcan
 

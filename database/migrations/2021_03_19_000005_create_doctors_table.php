@@ -22,9 +22,9 @@ class CreateDoctorsTable extends Migration
             $table->longText('states_licensed');
             $table->longText('have_malpractice');
             $table->longText('additional_notes')->nullable();
-            $table->longText('monthly_stipend');
             $table->string('last_name');
             $table->string('first_name');
+            $table->decimal('monthly_stipend', 15, 2);
             $table->timestamps();
             $table->softDeletes();
         });

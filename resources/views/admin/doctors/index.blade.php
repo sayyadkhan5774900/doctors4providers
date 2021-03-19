@@ -41,6 +41,9 @@
                             {{ trans('cruds.doctor.fields.states_licensed') }}
                         </th>
                         <th>
+                            {{ trans('cruds.doctor.fields.monthly_stipend') }}
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -68,6 +71,9 @@
                             </td>
                             <td>
                                 {{ $doctor->states_licensed ?? '' }}
+                            </td>
+                            <td>
+                                {{ $doctor->monthly_stipend ?? '' }}
                             </td>
                             <td>
                                 @can('doctor_show')

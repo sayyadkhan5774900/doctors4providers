@@ -109,8 +109,6 @@ return [
             'have_malpractice_helper'            => ' ',
             'additional_notes'                   => 'Any additional notes regarding your requests (schedule or communication)',
             'additional_notes_helper'            => ' ',
-            'monthly_stipend'                    => 'inimum required monthly stipend for remote collaborative agreement with a provider',
-            'monthly_stipend_helper'             => ' ',
             'cv'                                 => 'Upload CV (CV must be word format)',
             'cv_helper'                          => ' ',
             'redacted_cv'                        => 'Upload Redacted CV',
@@ -119,6 +117,8 @@ return [
             'last_name_helper'                   => ' ',
             'first_name'                         => 'First Name',
             'first_name_helper'                  => ' ',
+            'monthly_stipend'                    => 'Minimum required monthly stipend for remote collaborative agreement with a provider',
+            'monthly_stipend_helper'             => ' ',
         ],
     ],
     'provider'                 => [
