@@ -12,6 +12,10 @@ input {
     border-radius: 30px!important;
 }
 
+select {
+    border-radius: 30px!important;
+}
+
 .dropzone {
     /* height: 120 px!important;
     min-height: 120 px!important;

@@ -226,7 +226,7 @@
         </div>
     </div>
    
-    <div class="form-group">
+    <div id="billing_company_can_contact_show" class="form-group" style="display: none">
         <label>{{ trans('cruds.provider.fields.billing_company_can_contact') }}</label>
         <select class="form-control" name="billing_company_can_contact" id="billing_company_can_contact">
             <option value disabled {{ old('billing_company_can_contact', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>

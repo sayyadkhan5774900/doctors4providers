@@ -40,6 +40,17 @@
 @section('scripts')
 
 <script>
+
+$(document).ready(function(){
+  document.getElementById('have_billing_company').addEventListener('change', function () {
+    var style = this.value == 'no' ? 'block' : 'none';
+    document.getElementById('billing_company_can_contact_show').style.display = style;
+});
+});
+
+</script>
+
+<script>
     Dropzone.options.cvDropzoneone = {
     url: '{{ route('doctors.registration.storeMedia') }}',
     maxFilesize: 15, // MB
