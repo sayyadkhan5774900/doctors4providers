@@ -77,7 +77,7 @@
                                 @endcan
 
                                 @can('doctor_edit')
-                                    <a class="btn btn-xs btn-danger" href="{{ route('admin.doctors.edit', $doctor->id) }}">
+                                    <a class="btn btn-xs btn-info" href="{{ route('admin.doctors.edit', $doctor->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
