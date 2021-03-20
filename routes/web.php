@@ -65,7 +65,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Send Redacted Cv To Providers
     Route::resource('send-redacted-cv-to-providers', 'SendRedactedCvToProviderController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+    Route::get('send-redacted-cv-to-providers/match/doctor/{provider}', 'SendRedactedCvToProviderController@matchedDoctors')->name('matched.doctors.for.send');
     Route::post('send-redacted-cv-to-providers/send/', 'SendRedactedCvToProviderController@send')->name('send-redacted-cv-to-providers.send');
+
 
     // View Providers Messages
     Route::resource('view-providers-messages', 'ViewProvidersMessagesController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);

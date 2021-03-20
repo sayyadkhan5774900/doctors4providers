@@ -12,6 +12,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div>Providers</div>
+                        <div>States</div>
                         <div>Monthly budget</div>
                     </div>
                     <div class="card-body">
@@ -20,6 +21,7 @@
                                 <a class="text-decoration-none" href="{{ route('admin.matched.doctors', $provider->id) }}">
                                     <li class="list-group-item d-flex justify-content-between {{ 'admin/doctor-matches/'.$loop->iteration == request()->path() ? 'active' : '' }}">
                                     <div>{{ $provider->first_name.' '.$provider->last_name }}</div>
+                                    <div>{{ $provider->practice_states }}</div>
                                     <div>{{ $provider->monthly_budget }}</div>
                                     </li>
                                 </a>
@@ -28,7 +30,6 @@
                             @endforelse
                           </ul>
                     </div>
-                    <div>{{ request()->path() }}</div>
                 </div>
             </div>
             <div class="col-12 col-md-8">
