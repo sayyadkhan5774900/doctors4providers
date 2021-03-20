@@ -23,16 +23,22 @@
 
                         </th>
                         <th>
+                            Image
+                        </th>
+                        <th>
                             {{ trans('cruds.provider.fields.first_name') }}
                         </th>
                         <th>
                             {{ trans('cruds.provider.fields.last_name') }}
                         </th>
                         <th>
-                            {{ trans('cruds.provider.fields.email') }}
+                            Email
                         </th>
                         <th>
-                            {{ trans('cruds.provider.fields.phone') }}
+                            Phone
+                        </th>
+                        <th>
+                            Practice States
                         </th>
                         <th>
                             &nbsp;
@@ -44,6 +50,9 @@
                         <tr data-entry-id="{{ $provider->id }}">
                             <td>
 
+                            </td>
+                            <td class="text-center">
+                                <img style="border-radius: 30px" src="{{ Gravatar::get($provider->email,['size'=>40])}}" alt="">
                             </td>
                             <td>
                                 {{ $provider->first_name ?? '' }}
@@ -58,6 +67,9 @@
                                 {{ $provider->phone ?? '' }}
                             </td>
                             <td>
+                                {{ $provider->practice_states ?? '' }}
+                            </td>
+                            <td>
                                 @can('provider_show')
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.providers.show', $provider->id) }}">
                                         {{ trans('global.view') }}
@@ -65,7 +77,7 @@
                                 @endcan
 
                                 @can('provider_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.providers.edit', $provider->id) }}">
+                                    <a class="btn btn-xs btn-danger" href="{{ route('admin.providers.edit', $provider->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan

@@ -23,16 +23,19 @@
 
                         </th>
                         <th>
+                            Image
+                        </th>
+                        <th>
                             {{ trans('cruds.doctor.fields.first_name') }}
                         </th>
                         <th>
                             {{ trans('cruds.doctor.fields.last_name') }}
                         </th>
                         <th>
-                            {{ trans('cruds.doctor.fields.email') }}
+                            Email
                         </th>
                         <th>
-                            {{ trans('cruds.doctor.fields.phone') }}
+                            Phone
                         </th>
                         <th>
                             {{ trans('cruds.doctor.fields.states_licensed') }}
@@ -47,6 +50,9 @@
                         <tr data-entry-id="{{ $doctor->id }}">
                             <td>
 
+                            </td>
+                            <td class="text-center">
+                                <img style="border-radius: 30px" src="{{ Gravatar::get($doctor->email,['size'=>40])}}" alt="">
                             </td>
                             <td>
                                 {{ $doctor->first_name ?? '' }}
@@ -71,7 +77,7 @@
                                 @endcan
 
                                 @can('doctor_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.doctors.edit', $doctor->id) }}">
+                                    <a class="btn btn-xs btn-danger" href="{{ route('admin.doctors.edit', $doctor->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
