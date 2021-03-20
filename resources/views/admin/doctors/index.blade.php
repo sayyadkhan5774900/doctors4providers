@@ -23,9 +23,6 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.doctor.fields.id') }}
-                        </th>
-                        <th>
                             {{ trans('cruds.doctor.fields.first_name') }}
                         </th>
                         <th>
@@ -41,9 +38,6 @@
                             {{ trans('cruds.doctor.fields.states_licensed') }}
                         </th>
                         <th>
-                            {{ trans('cruds.doctor.fields.monthly_stipend') }}
-                        </th>
-                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -53,9 +47,6 @@
                         <tr data-entry-id="{{ $doctor->id }}">
                             <td>
 
-                            </td>
-                            <td>
-                                {{ $doctor->id ?? '' }}
                             </td>
                             <td>
                                 {{ $doctor->first_name ?? '' }}
@@ -71,9 +62,6 @@
                             </td>
                             <td>
                                 {{ $doctor->states_licensed ?? '' }}
-                            </td>
-                            <td>
-                                {{ $doctor->monthly_stipend ?? '' }}
                             </td>
                             <td>
                                 @can('doctor_show')

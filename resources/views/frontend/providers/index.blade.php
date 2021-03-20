@@ -23,9 +23,6 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        {{ trans('cruds.provider.fields.id') }}
-                                    </th>
-                                    <th>
                                         {{ trans('cruds.provider.fields.first_name') }}
                                     </th>
                                     <th>
@@ -38,33 +35,6 @@
                                         {{ trans('cruds.provider.fields.phone') }}
                                     </th>
                                     <th>
-                                        {{ trans('cruds.provider.fields.date_of_agreement') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.provider.fields.communication_form') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.provider.fields.begin_seeing_patients') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.provider.fields.have_malpractice') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.provider.fields.agent_can_contact') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.provider.fields.have_billing_company') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.provider.fields.billing_company_can_contact') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.provider.fields.monthly_budget') }}
-                                    </th>
-                                    <th>
-                                        {{ trans('cruds.provider.fields.percentage_of_chart') }}
-                                    </th>
-                                    <th>
                                         &nbsp;
                                     </th>
                                 </tr>
@@ -72,9 +42,6 @@
                             <tbody>
                                 @foreach($providers as $key => $provider)
                                     <tr data-entry-id="{{ $provider->id }}">
-                                        <td>
-                                            {{ $provider->id ?? '' }}
-                                        </td>
                                         <td>
                                             {{ $provider->first_name ?? '' }}
                                         </td>
@@ -86,33 +53,6 @@
                                         </td>
                                         <td>
                                             {{ $provider->phone ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $provider->date_of_agreement ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $provider->communication_form ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $provider->begin_seeing_patients ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $provider->have_malpractice ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ App\Models\Provider::AGENT_CAN_CONTACT_SELECT[$provider->agent_can_contact] ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ App\Models\Provider::HAVE_BILLING_COMPANY_SELECT[$provider->have_billing_company] ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ App\Models\Provider::BILLING_COMPANY_CAN_CONTACT_SELECT[$provider->billing_company_can_contact] ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $provider->monthly_budget ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $provider->percentage_of_chart ?? '' }}
                                         </td>
                                         <td>
                                             @can('provider_show')
