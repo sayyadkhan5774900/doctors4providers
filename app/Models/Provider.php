@@ -116,4 +116,9 @@ class Provider extends Model implements HasMedia
     {
         return $this->getMedia('redacted_cv')->last();
     }
+
+    public function doctors()
+    {
+        return $this->belongsToMany(Provider::class);
+    }
 }

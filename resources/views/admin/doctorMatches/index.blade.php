@@ -10,125 +10,59 @@
         <div class="row">
             <div class="col-12 col-md-4">
                 <div class="card">
-                    <div class="card-header">
-                        Providers
+                    <div class="card-header d-flex justify-content-between">
+                        <div>Providers</div>
+                        <div>Monthly budget</div>
                     </div>
                     <div class="card-body">
-                        <div class="card mb-0">
-                            <div class="card-header">
-                                <a href="">Provider</a>
-                            </div>
-                        </div>
-                        <div class="card mb-0">
-                            <div class="card-header">
-                                <a href="">Provider</a>
-                            </div>
-                        </div>
-                        <div class="card mb-0">
-                            <div class="card-header">
-                                <a href="">Provider</a>
-                            </div>
-                        </div>
+                        <ul class="list-group overflow-auto" style="height: 400px">
+                            @forelse ($providers as $provider)
+                                <a class="text-decoration-none" href="{{ route('admin.matched.doctors', $provider->id) }}">
+                                    <li class="list-group-item d-flex justify-content-between {{ 'admin/doctor-matches/'.$loop->iteration == request()->path() ? 'active' : '' }}">
+                                    <div>{{ $provider->first_name.' '.$provider->last_name }}</div>
+                                    <div>{{ $provider->monthly_budget }}</div>
+                                    </li>
+                                </a>
+                            @empty
+                                <p>No Provider Found</p>
+                            @endforelse
+                          </ul>
                     </div>
+                    <div>{{ request()->path() }}</div>
                 </div>
             </div>
             <div class="col-12 col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        Matches
+                        Matched Doctors
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class=" table table-bordered table-striped table-hover datatable datatable-Doctor">
                                 <thead>
                                     <tr>
-                                        <th>
-                                            First Name
-                                        </th>
-                                        <th>
-                                            Last Name
-                                        </th>
-                                        <th>
-                                            Email
-                                        </th>
-                                        <th>
-                                            Phone
-                                        </th>
-                                        <th>
-                                            State Licenced
-                                        </th>
-                                        <th>
-                                            Amount
-                                        </th>
-                                        <th>
-                                            &nbsp;
-                                        </th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>State Licenced</th>
+                                        <th>Monthly Stipend</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @forelse ($doctors as $doctor)
                                     <tr>
-                                        <td>
-                                            John
-                                        </td>
-                                        <td>
-                                            White
-                                        </td>
-                                        <td>
-                                            john@doctor.com
-                                        </td>
-                                        <td>
-                                            26152 72817 7878
-                                        </td>
-                                        <td>
-                                            California
-                                        </td>
-                                        <td>
-                                                            
-                                        </td>
-            
+                                        <td>{{ $doctor->first_name }}</td>
+                                        <td>{{ $doctor->last_name }}</td>
+                                        <td>{{ $doctor->email }}</td>
+                                        <td>{{ $doctor->phone }}</td>
+                                        <td>{{ $doctor->states_licensed }}</td>
+                                        <td>{{ $doctor->monthly_stipend }}</td>
+                                        
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            John
-                                        </td>
-                                        <td>
-                                            White
-                                        </td>
-                                        <td>
-                                            john@doctor.com
-                                        </td>
-                                        <td>
-                                            26152 72817 7878
-                                        </td>
-                                        <td>
-                                            California
-                                        </td>
-                                        <td>
-                                                            
-                                        </td>
-            
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            John
-                                        </td>
-                                        <td>
-                                            White
-                                        </td>
-                                        <td>
-                                            john@doctor.com
-                                        </td>
-                                        <td>
-                                            26152 72817 7878
-                                        </td>
-                                        <td>
-                                            California
-                                        </td>
-                                        <td>
-                                                            
-                                        </td>
-            
-                                    </tr>
+                                    @empty
+                                        <div class="mb-2 text-warning">Not Matching Doctor Found</div>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>

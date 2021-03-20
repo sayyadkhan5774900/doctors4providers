@@ -1,0 +1,26 @@
+Hospital Manager done
+	1) Can be created.https://tinyears.co.za/hospital_registration/
+	2) Can add hospital after loggin.
+	3) Can add/update/delete Audiology Practice.
+	4) Can add/update/delete Paeditratice institution.
+	5) Can not see parents/babies/followups
+
+
+Audiology practice. done
+	1) Can add/udpate/delete screener.
+	2) Can add/update/delete Equipments.
+	3) Can see parents/babies/followups. 
+	
+	
+Paeditratice instution. Not Done showing some extra data with babies
+	1) Can add/update/delete Paeditraction.
+	2) Can see parents/babies/followups of same hospital patients
+
+Paeditraction (Issue not showing babies)
+	1) Can see parents/babies/followups of same hospital patients.
+	2) Can add notes to the followups- follow up notes. Charl
+	3) Just can see the recent babies not all of them( Charl Some sort of query mistake)
+Screener Done
+	1) Can add/update/delete parents
+	2) Can add/udpate/delete babies
+	3) Can add followups.

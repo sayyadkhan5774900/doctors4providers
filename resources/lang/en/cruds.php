@@ -93,7 +93,7 @@ return [
             'address_helper'                     => ' ',
             'practice'                           => 'Enter practice, If applicable',
             'practice_helper'                    => ' ',
-            'experience'                         => 'Please describe your prior collaborative experience, if any. (ok to leave blank) optional',
+            'experience'                         => 'Please describe your prior collaborative experience',
             'experience_helper'                  => ' ',
             'specialization'                     => 'Specialization of practice',
             'specialization_helper'              => ' ',

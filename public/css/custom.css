@@ -5,14 +5,23 @@ textarea {
 
 textarea {
     border-radius: 30px!important;
+    <<<<<<< HEAD=======min-height: 50px!important;
+    >>>>>>>SayyadWork
 }
 
 input {
     border-radius: 30px!important;
 }
 
+select {
+    border-radius: 30px!important;
+}
+
 .dropzone {
-    border-radius: 70px!important;
+    /* height: 120 px!important;
+    min-height: 120 px!important;
+    max-height: 120 px!important; */
+    border-radius: 100px!important;
 }
 
 .btn {
