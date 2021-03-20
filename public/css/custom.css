@@ -5,6 +5,7 @@ textarea {
 
 textarea {
     border-radius: 30px!important;
+    min-height: 50px!important;
 }
 
 input {
@@ -12,7 +13,10 @@ input {
 }
 
 .dropzone {
-    border-radius: 70px!important;
+    /* height: 120 px!important;
+    min-height: 120 px!important;
+    max-height: 120 px!important; */
+    border-radius: 100px!important;
 }
 
 .btn {

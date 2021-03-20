@@ -37,9 +37,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Doctor Matches
     Route::resource('doctor-matches', 'DoctorMatchsController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+    Route::get('doctor-matches/{provider}', 'DoctorMatchsController@matchedDoctors')->name('matched.doctors');
 
     // Redact Doctor Cvs
-    Route::resource('redact-doctor-cvs', 'RedactDoctorCvController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+    Route::resource('redact-doctor-cvs', 'RedactDoctorCvController', ['except' => ['create', 'store', 'show', 'update', 'destroy']]);
+    Route::put('uplaod-redacted-doctor-cvs', 'RedactDoctorCvController@update')->name('uplaod-redacted-doctor-cvs');
+    Route::get('/download/cv/{id}', 'RedactDoctorCvController@cvDownload')->name('cv.download');
+    Route::get('/download/redacted/cv/{id}', 'RedactDoctorCvController@redactedDownload')->name('redacted.cv.download');
+
+
 
     // Doctors Message Approvels
     Route::resource('doctors-message-approvels', 'DoctorsMessageApprovelsController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
@@ -59,6 +65,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Send Redacted Cv To Providers
     Route::resource('send-redacted-cv-to-providers', 'SendRedactedCvToProviderController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
+    Route::post('send-redacted-cv-to-providers/send/', 'SendRedactedCvToProviderController@send')->name('send-redacted-cv-to-providers.send');
 
     // View Providers Messages
     Route::resource('view-providers-messages', 'ViewProvidersMessagesController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);

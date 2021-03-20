@@ -68,4 +68,9 @@ class Doctor extends Model implements HasMedia
     {
         return $this->getMedia('redacted_cv')->last();
     }
+   
+    public function providers()
+    {
+        return $this->belongsToMany(Doctor::class);
+    }
 }

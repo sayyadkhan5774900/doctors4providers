@@ -17,23 +17,23 @@ class DoctorMatchsController extends Controller
 
         $providers = Provider::all()->sortByDesc('created_at');
 
-        $state = $providers[0]->practice_states;
+        $doctors = collect();
 
-        $budget = $providers[0]->monthly_budget;
-
-        // ->where('monthly_stipend' <= $budget)
-
-        $doctors = Doctor::where('states_licensed',$state)->get();
-
-        dd($doctors);
-
-        return view('admin.doctorMatches.index');
+        return view('admin.doctorMatches.index', compact('providers','doctors'));
     }
 
     public function matchedDoctors(Provider $provider)
     {
         abort_if(Gate::denies('doctor_match_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.doctorMatches.index');
+        $providers = Provider::all()->sortByDesc('created_at');
+
+        $state = $provider->practice_states;
+
+        $budget = $provider->monthly_budget;
+
+        $doctors = Doctor::where('states_licensed',$state)->where('monthly_stipend','<=',$budget)->get();
+
+        return view('admin.doctorMatches.index', compact('providers','doctors'));
     }
 }

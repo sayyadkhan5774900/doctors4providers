@@ -10,6 +10,8 @@ return [
     'dashboard'                            => 'Dashboard',
     'delete'                               => 'Delete',
     'downloadFile'                         => 'Download file',
+    'download'                             => 'Download',
+    'upload'                               => 'Upload',
     'edit'                                 => 'Edit',
     'emailVerificationSuccess'             => 'User email verified successfully',
     'entries'                              => 'Entries',
